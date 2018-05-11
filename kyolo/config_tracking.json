@@ -1,0 +1,38 @@
+{
+    "model" : {
+        "backend":              "Tiny Yolo",
+        "input_size":           416,
+        "anchors":              [0.39,1.18, 0.69,5.29, 0.93,1.72, 1.75,3.15, 3.03,5.90],
+        "max_box_per_image":    10,        
+        "labels":               ["person", "car"]
+    },
+
+    "train": {
+        "train_image_folder":   "/home/batya/Downloads/ttrnn/vod-converter/datasets/voc/VOC2012/JPEGImages/",
+        "train_annot_folder":   "/home/batya/Downloads/ttrnn/vod-converter/datasets/voc/VOC2012/Annotations/",     
+          
+        "train_times":          8,
+        "batch_size":           32,
+        "learning_rate":        1e-4,
+        "nb_epochs":            10,
+        "warmup_epochs":        3,
+
+        "pretrained_weights": "new_tiny_yolo.h5",
+
+        "object_scale":         5.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+
+        "saved_weights_name":   "new_tiny_yolo_tt.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+
+        "valid_times":          1
+    }
+}
+
